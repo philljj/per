@@ -18,14 +18,11 @@ per(uint64_t n)
     size_t step = 1;
 
     while (n > 10) {
-        char str[32];
+        char         str[32];
+        const char * i = &str[0];
+        uint64_t     prod = 1;
 
         sprintf(str, "%llu", n);
-
-        printf("step: %zu: %s\n", step, str);
-
-        const char * i = &str[0];
-        uint64_t prod = 1;
 
         while(*i) {
             prod *= (*i - '0');
@@ -33,6 +30,7 @@ per(uint64_t n)
         }
 
         n = prod;
+        printf("step: %zu: %s -> %llu\n", step, str, n);
         ++step;
     }
 
