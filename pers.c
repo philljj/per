@@ -30,7 +30,7 @@ per(uint64_t n)
         }
 
         n = prod;
-        printf("step: %zu: %s -> %llu\n", step, str, n);
+        printf("step %zu: %s -> %llu\n", step, str, n);
         ++step;
     }
 
@@ -53,5 +53,5 @@ main(int    argc,
         print_usage_and_die();
     }
 
-    per((uint64_t) n);
+    per(n);
 }
